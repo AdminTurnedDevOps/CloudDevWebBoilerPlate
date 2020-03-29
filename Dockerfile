@@ -4,11 +4,11 @@ EXPOSE 80
 EXPOSE 443
 
 # Copy csproj and restore as distinct layers
-COPY $(Build.ArtifactStagingDirectory)/web/*.csproj ./
+COPY $(Build.ArtifactStagingDirectory)*.csproj ./
 RUN dotnet restore
 
 # Copy .NET Core Web App. Release packs the application and its dependencies into a folder for deployment to a hosting system
-COPY $(Build.ArtifactStagingDirectory)/web ./
+COPY $(Build.ArtifactStagingDirectory) ./
 RUN dotnet publish -c Release -o out
 
 # Build the runtime image
