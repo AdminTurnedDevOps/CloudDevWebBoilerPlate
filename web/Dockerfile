@@ -14,5 +14,5 @@ COPY * ./
 # Build the runtime image
 FROM mcr.microsoft.com/dotnet/core/aspnet
 WORKDIR /appdir
-COPY --from=build-env /appdir/out .
+COPY --from=build-env /appdir .
 ENTRYPOINT ["dotnet", "web.dll"]
