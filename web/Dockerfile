@@ -9,7 +9,7 @@ RUN dotnet restore
 
 # Copy .NET Core Web App. Release packs the application and its dependencies into a folder for deployment to a hosting system
 COPY * ./
-RUN dotnet publish -c Release -o out
+#RUN dotnet publish -c Release -o out
 
 # Build the runtime image
 FROM mcr.microsoft.com/dotnet/core/aspnet
